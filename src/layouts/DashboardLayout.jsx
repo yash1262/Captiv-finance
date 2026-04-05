@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import './DashboardLayout.css';
-import API_BASE_URL from '../utils/config';
+import API_BASE from '../config';
 
 function DashboardLayout({ children }) {
   const navigate = useNavigate();
@@ -48,8 +48,8 @@ function DashboardLayout({ children }) {
     
     try {
       const [summary, comparison] = await Promise.all([
-        fetch(`${API_BASE_URL}/api/dashboard/summary`, { headers: { 'Authorization': `Bearer ${token}` } }).then(r => r.json()),
-        fetch(`${API_BASE_URL}/api/dashboard/monthly-comparison`, { headers: { 'Authorization': `Bearer ${token}` } }).then(r => r.json())
+        fetch(`${API_BASE}/api/dashboard/summary`, { headers: { 'Authorization': `Bearer ${token}` } }).then(r => r.json()),
+        fetch(`${API_BASE}/api/dashboard/monthly-comparison`, { headers: { 'Authorization': `Bearer ${token}` } }).then(r => r.json())
       ]);
 
       console.log('Summary data:', summary);

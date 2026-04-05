@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Records.css';
-import API_BASE_URL from '../utils/config';
+import API_BASE from '../config';
 
 function Records() {
   const [records, setRecords] = useState([]);
@@ -77,7 +77,7 @@ function Records() {
   const loadRecords = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/api/records`, {
+      const response = await fetch(`${API_BASE}/api/records`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -152,7 +152,7 @@ function Records() {
   const handleAddRecord = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${API_BASE_URL}/api/records`, {
+      const response = await fetch(`${API_BASE}/api/records`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ function Records() {
   const handleEditRecord = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${API_BASE_URL}/api/records/${selectedRecord.id}`, {
+      const response = await fetch(`${API_BASE}/api/records/${selectedRecord.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -203,7 +203,7 @@ function Records() {
 
   const handleDeleteRecord = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/records/${selectedRecord.id}`, {
+      const response = await fetch(`${API_BASE}/api/records/${selectedRecord.id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, ArcElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import './Analytics.css';
-import API_BASE_URL from '../utils/config';
+import API_BASE from '../config';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, ArcElement, Title, Tooltip, Legend);
 
@@ -42,9 +42,9 @@ function Analytics() {
       const params = new URLSearchParams({ start, end });
 
       const [summary, records, categories] = await Promise.all([
-        fetch(`${API_BASE_URL}/api/dashboard/summary?${params}`, { headers }).then(r => r.json()),
-        fetch(`${API_BASE_URL}/api/records?startDate=${start}&endDate=${end}`, { headers }).then(r => r.json()),
-        fetch(`${API_BASE_URL}/api/dashboard/category-totals?${params}`, { headers }).then(r => r.json())
+        fetch(`${API_BASE}/api/dashboard/summary?${params}`, { headers }).then(r => r.json()),
+        fetch(`${API_BASE}/api/records?startDate=${start}&endDate=${end}`, { headers }).then(r => r.json()),
+        fetch(`${API_BASE}/api/dashboard/category-totals?${params}`, { headers }).then(r => r.json())
       ]);
 
       const monthlyBreakdown = calculateMonthlyBreakdown(records.records || []);

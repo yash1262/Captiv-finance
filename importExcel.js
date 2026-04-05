@@ -199,10 +199,11 @@ async function importExcelData() {
 
 // Function to check if import is needed
 function checkAndImport() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     db.get('SELECT COUNT(*) as count FROM financial_records', [], async (err, result) => {
       if (err) {
-        reject(err);
+        console.log('Could not check records count, skipping import');
+        resolve({ inserted: 0, skipped: 0, errors: 0 });
         return;
       }
       
@@ -212,7 +213,8 @@ function checkAndImport() {
           const stats = await importExcelData();
           resolve(stats);
         } catch (error) {
-          reject(error);
+          console.log('Excel import skipped:', error.message);
+          resolve({ inserted: 0, skipped: 0, errors: 0 });
         }
       } else {
         console.log(`Database already has ${result.count} records, skipping import`);

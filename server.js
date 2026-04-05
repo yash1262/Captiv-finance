@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { initDatabase } = require('./database');
-const { checkAndImport } = require('./importExcel');
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
@@ -35,16 +34,11 @@ app.use(express.static('public'));
 // Initialize database and import Excel data
 initDatabase();
 
-// Import Excel data after a short delay to ensure tables are created
+// Seed database after a short delay to ensure tables are created
 setTimeout(() => {
-  checkAndImport()
-    .then(() => {
-      console.log('Excel import check completed');
-    })
-    .catch((error) => {
-      console.error('Excel import failed:', error);
-    });
-}, 1000);
+  const { seedDatabase } = require('./seedData');
+  seedDatabase();
+}, 2000);
 
 // Routes
 console.log('Mounting routes...');

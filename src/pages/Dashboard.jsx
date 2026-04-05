@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, ArcElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar, Line, Doughnut } from 'react-chartjs-2';
 import './Dashboard.css';
+import API_BASE_URL from '../utils/config';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, ArcElement, Title, Tooltip, Legend);
 
@@ -120,19 +121,19 @@ function Dashboard() {
       console.log('Dashboard: Token exists:', !!token);
       
       const [summary, transactions, categories, trends, dailyCounts, weekly, comparison, streak, cashflow, activity, topTxns, obligations, frequency] = await Promise.allSettled([
-        fetchWithTimeout(`/api/dashboard/summary?${params}`, { headers }),
-        fetchWithTimeout(`/api/records?startDate=${startDate}&endDate=${endDate}&limit=100`, { headers }),
-        fetchWithTimeout(`/api/dashboard/category-totals?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/monthly-trends?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/daily-counts?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/weekly-summary?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/monthly-comparison?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/streak?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/daily-cashflow?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/recent-activity?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/top-transactions?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/payment-obligations?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/transaction-frequency?${params}`, { headers })
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/summary?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/records?startDate=${startDate}&endDate=${endDate}&limit=100`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/category-totals?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/monthly-trends?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/daily-counts?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/weekly-summary?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/monthly-comparison?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/streak?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/daily-cashflow?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/recent-activity?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/top-transactions?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/payment-obligations?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/transaction-frequency?${params}`, { headers })
       ]).then(results => results.map((result, index) => {
         if (result.status === 'fulfilled') {
           return result.value;
@@ -182,14 +183,14 @@ function Dashboard() {
       const params = new URLSearchParams({ start: startDate, end: endDate });
       
       const [dailyNet, distribution, allTxns, matrix, cumulative, expenseChange, savingsRate, moneyFlow] = await Promise.allSettled([
-        fetchWithTimeout(`/api/dashboard/daily-net?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/spending-distribution?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/all-transactions?${params}`, { headers }),
-        fetchWithTimeout(`/api/dashboard/category-month-matrix`, { headers }),
-        fetchWithTimeout(`/api/dashboard/cumulative-savings`, { headers }),
-        fetchWithTimeout(`/api/dashboard/monthly-expense-change`, { headers }),
-        fetchWithTimeout(`/api/dashboard/savings-rate-trend`, { headers }),
-        fetchWithTimeout(`/api/dashboard/money-flow`, { headers })
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/daily-net?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/spending-distribution?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/all-transactions?${params}`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/category-month-matrix`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/cumulative-savings`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/monthly-expense-change`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/savings-rate-trend`, { headers }),
+        fetchWithTimeout(`${API_BASE_URL}/api/dashboard/money-flow`, { headers })
       ]).then(results => results.map((result, index) => {
         if (result.status === 'fulfilled') {
           return result.value;

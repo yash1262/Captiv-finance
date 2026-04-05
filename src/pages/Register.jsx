@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import brandImage from '../assets/captiv-brand.png';
 import './Register.css';
+import API_BASE_URL from '../utils/config';
 
 function Register() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Register() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

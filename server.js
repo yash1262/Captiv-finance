@@ -38,7 +38,7 @@ initDatabase();
 setTimeout(() => {
   const { seedDatabase } = require('./seedData');
   seedDatabase();
-}, 2000);
+}, 3000);
 
 // Routes
 console.log('Mounting routes...');

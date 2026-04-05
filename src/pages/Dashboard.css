@@ -1,0 +1,1100 @@
+/* Dashboard Container - Now Scrollable */
+.dashboard-powerbi {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: 6px;
+  overflow: visible;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+/* Filter Row */
+.filter-chips-bar {
+  min-height: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: visible;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  cursor: pointer;
+  border: 1.5px solid #032221;
+  background: white;
+  color: #032221;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-weight: 500;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.filter-chip:hover {
+  background: #F1F7F6;
+}
+
+.filter-chip.active {
+  background: #00DF81;
+  border-color: #00DF81;
+  color: #032221;
+  font-weight: 600;
+}
+
+/* Dashboard Rows - Flexible Heights for Scrolling */
+.dashboard-row-1 {
+  min-height: 168px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.dashboard-row-2 {
+  min-height: 168px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.dashboard-row-3 {
+  min-height: 140px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.dashboard-row-4 {
+  min-height: 160px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.dashboard-row-5 {
+  min-height: 138px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.dashboard-row-6 {
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.dashboard-row-7 {
+  min-height: 180px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* Card Sizing */
+.card-40 { flex: 2.2; }
+.card-30 { flex: 1.4; }
+.card-33 { flex: 1; }
+.card-50 { flex: 1; }
+.card-60 { flex: 2.2; }
+.card-65 { flex: 2.2; }
+.card-35 { flex: 1.8; }
+.card-full { flex: 1; width: 100%; }
+
+/* Base Card Styles */
+.powerbi-card {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 8px 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.card-title-powerbi {
+  font-size: 10px;
+  font-weight: 700;
+  color: #032221;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+/* Chart Containers */
+.chart-container-220,
+.chart-container-240,
+.chart-container-200 {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.chart-container-220 canvas,
+.chart-container-240 canvas,
+.chart-container-200 canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Static Legends Above Charts */
+.chart-legend-static {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+  font-size: 9px;
+}
+
+.legend-item-static {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-dot-static {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Quick Stats */
+.quick-stats-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.quick-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px;
+}
+
+.stat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+
+.stat-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-label-small {
+  font-size: 9px;
+  color: #6B7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-value-small {
+  font-size: 11px;
+  font-weight: 600;
+  color: #032221;
+}
+
+/* Performance Badges */
+.performance-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.perf-badge {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+  background: #F9FAFB;
+  border-radius: 6px;
+}
+
+.perf-label {
+  font-size: 8px;
+  color: #6B7280;
+  margin-bottom: 1px;
+}
+
+.perf-value {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.perf-value.positive {
+  color: #10B981;
+}
+
+.perf-value.negative {
+  color: #DC2626;
+}
+
+/* Donut Center Text */
+.donut-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  width: 60%;
+  overflow: hidden;
+  background: white;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.donut-center-label {
+  font-size: 8px;
+  color: #6B7280;
+  display: block;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.donut-center-value {
+  font-size: 10px;
+  font-weight: 700;
+  color: #032221;
+  display: block;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.donut-center-value.positive {
+  color: #10B981;
+}
+
+.donut-center-value.negative {
+  color: #DC2626;
+}
+
+/* Cash Flow Legend Below Chart */
+.cashflow-legend {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 4px;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-text {
+  font-size: 8px;
+  color: #6B7280;
+}
+
+.legend-amount {
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.legend-amount.income {
+  color: #10B981;
+}
+
+.legend-amount.expense {
+  color: #F97316;
+}
+
+/* Category Donut Legend */
+.category-legend-static {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+  max-height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.category-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 8px;
+  color: #6B7280;
+}
+
+/* Payment Obligations */
+.payment-obligations-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.obligation-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.obligation-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.obligation-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.obligation-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.obligation-name {
+  font-size: 9px;
+  font-weight: 600;
+  color: #032221;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.obligation-amount {
+  font-size: 9px;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.obligation-status {
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  height: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.obligation-status.paid {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.obligation-status.due {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.obligation-status.overdue {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+/* Week at a Glance */
+.week-glance-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: calc(100% - 16px);
+  gap: 2px;
+}
+
+.week-glance-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin: 0 2px;
+  padding: 2px;
+}
+
+.week-day-name {
+  font-size: 7px;
+  color: #6B7280;
+  margin-bottom: 2px;
+}
+
+.week-day-date {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.week-day-amount {
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.week-glance-box.positive {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.week-glance-box.negative {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.week-glance-box.neutral {
+  background: #F3F4F6;
+  color: #6B7280;
+}
+
+.streak-counter {
+  margin-top: 4px;
+  text-align: center;
+  flex-shrink: 0;
+  height: 16px;
+}
+
+.streak-text {
+  font-size: 9px;
+  color: #6B7280;
+}
+
+/* Transaction Frequency Heatmap */
+.heatmap-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.heatmap-days-header {
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+}
+
+.heatmap-day-label {
+  font-size: 7px;
+  color: #9CA3AF;
+  text-align: center;
+  width: 9px;
+  display: inline-block;
+}
+
+.heatmap-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+  min-height: 0;
+}
+
+.heatmap-week {
+  display: flex;
+  gap: 1.5px;
+}
+
+.heatmap-cell {
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.heatmap-cell.none {
+  background: #F3F4F6;
+}
+
+.heatmap-cell.low {
+  background: #BBF7D0;
+}
+
+.heatmap-cell.medium {
+  background: #4ADE80;
+}
+
+.heatmap-cell.high {
+  background: #16A34A;
+}
+
+.heatmap-cell.very-high {
+  background: #064E3B;
+}
+
+/* Recent Activity and Insights */
+.activity-insights-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.recent-activity-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.top-insights-section {
+  flex: 0 0 42%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.subsection-title-powerbi {
+  font-size: 9px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  flex-shrink: 0;
+  color: #032221;
+}
+
+.recent-activity-list {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 9px;
+  gap: 4px;
+}
+
+.activity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.activity-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.activity-category {
+  font-size: 9px;
+  font-weight: 600;
+  color: #032221;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.activity-date {
+  font-size: 8px;
+  color: #6B7280;
+}
+
+.activity-badge {
+  font-size: 8px;
+  padding: 1px 3px;
+  border-radius: 3px;
+  background: #F3F4F6;
+  color: #6B7280;
+  flex-shrink: 0;
+}
+
+.activity-amount {
+  font-size: 9px;
+  font-weight: 600;
+  color: #032221;
+  flex-shrink: 0;
+}
+
+.insight-card {
+  padding: 4px 6px;
+  background: #F9FAFB;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  font-size: 9px;
+}
+
+.insight-label {
+  font-size: 8px;
+  color: #6B7280;
+  margin-bottom: 1px;
+}
+
+.insight-value {
+  font-size: 10px;
+  font-weight: 600;
+  color: #032221;
+}
+
+/* Loading and Error States */
+.dashboard-loading-powerbi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+}
+
+.loading-spinner-powerbi {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #E5E7EB;
+  border-top-color: #00DF81;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.no-data-message {
+  text-align: center;
+  color: #6B7280;
+  font-size: 10px;
+  padding: 20px;
+}
+
+/* Utility Classes */
+.text-right {
+  text-align: right;
+}
+
+.income-text {
+  color: #10B981;
+}
+
+.expense-text {
+  color: #F97316;
+}
+
+/* Advanced Analytics Sections */
+
+/* Section Dividers */
+.section-divider {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #E5E7EB;
+}
+
+.section-divider-small {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #032221;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.section-subheading {
+  font-size: 11px;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ECG Section */
+.ecg-section {
+  min-height: 120px;
+  margin-bottom: 6px;
+}
+
+.ecg-card {
+  background: #032221;
+  border: 1px solid #03624C;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ecg-header {
+  margin-bottom: 8px;
+}
+
+.ecg-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.ecg-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #34D399;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34D399;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ecg-subtitle {
+  font-size: 10px;
+  color: rgba(241, 247, 246, 0.5);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ecg-chart-container {
+  flex: 1;
+  position: relative;
+  min-height: 80px;
+}
+
+.ecg-zero-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(241, 247, 246, 0.2);
+  border-top: 1px dashed rgba(241, 247, 246, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Multi Chart Row */
+.multi-chart-row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  min-height: 200px;
+  margin-bottom: 6px;
+}
+
+.card-25 {
+  flex: 1;
+}
+
+/* Scatter Plot */
+.scatter-plot-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #F9FAFB;
+  border-radius: 6px;
+}
+
+.scatter-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.scatter-dot:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Heatmap Section */
+.heatmap-section-row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  min-height: 280px;
+  margin-bottom: 6px;
+}
+
+.category-heatmap-container {
+  flex: 1;
+  overflow: auto;
+}
+
+.heatmap-grid-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 10px;
+}
+
+.heatmap-header-row {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.heatmap-corner {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.heatmap-month-label {
+  flex: 1;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6B7280;
+  padding: 4px;
+}
+
+.heatmap-data-row {
+  display: flex;
+  gap: 2px;
+}
+
+.heatmap-category-label {
+  width: 100px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #032221;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.heatmap-cell-custom {
+  flex: 1;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.heatmap-cell-custom:hover {
+  transform: scale(1.05);
+}
+
+/* Day Week Heatmap */
+.day-week-heatmap-container {
+  flex: 1;
+  overflow: auto;
+}
+
+.day-week-heatmap-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 10px;
+}
+
+.day-week-header-row {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.day-week-corner {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.day-week-day-label {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: #6B7280;
+  padding: 4px;
+}
+
+.day-week-data-row {
+  display: flex;
+  gap: 2px;
+}
+
+.day-week-week-label {
+  width: 60px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #032221;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.day-week-cell {
+  flex: 1;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.day-week-cell:hover {
+  transform: scale(1.05);
+}
+
+/* Trend Analysis Row */
+.trend-analysis-row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  min-height: 200px;
+  margin-bottom: 6px;
+}
+
+/* Network Section */
+.network-section {
+  min-height: 320px;
+  margin-bottom: 20px;
+}
+
+.network-diagram-container {
+  flex: 1;
+  min-height: 240px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.network-diagram-container svg {
+  display: block;
+}
+
+.network-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-top: 4px;
+  border-top: 1px solid #F3F4F6;
+  margin-top: 8px;
+}
+
+.network-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.network-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.network-legend-text {
+  font-size: 10px;
+  color: #6B7280;
+  font-family: Inter;
+}

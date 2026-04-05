@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.analytics-page {
+  background: transparent;
+  min-height: 100%;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.page-header-analytics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: #6B7280;
+  margin-top: 4px;
+}
+
+.period-selector {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: white;
+  font-size: 13px;
+  font-weight: 600;
+  color: #032221;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px 16px;
+  flex: 1;
+  border: 1px solid #E5E7EB;
+  border-left-width: 3px;
+}
+
+.metric-label {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 6px;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #032221;
+  margin-bottom: 4px;
+}
+
+.metric-change {
+  font-size: 9px;
+  color: #6B7280;
+}
+
+.charts-row-2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #E5E7EB;
+  flex: 2;
+}
+
+.chart-card-large {
+  flex: 3;
+}
+
+.chart-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #032221;
+  margin-bottom: 12px;
+}
+
+.chart-wrapper {
+  height: 240px;
+  position: relative;
+}
+
+.monthly-table-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #E5E7EB;
+  margin-bottom: 16px;
+}
+
+.monthly-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.monthly-table thead tr {
+  background: #F9FAFB;
+  border-bottom: 2px solid #E5E7EB;
+}
+
+.monthly-table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.monthly-table tbody tr {
+  border-bottom: 1px solid #F3F4F6;
+  transition: background 0.2s;
+}
+
+.monthly-table tbody tr:hover {
+  background: #F0FDF4;
+}
+
+.monthly-table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.monthly-table tfoot tr.total-row {
+  background: #032221;
+  color: white;
+  font-weight: 700;
+}
+
+.monthly-table tfoot td {
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.income-color {
+  color: #059669;
+}
+
+.expense-color {
+  color: #DC2626;
+}
+
+.savings-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.savings-badge.good {
+  background: #D1FAE5;
+  color: #065F46;
+}
+
+.savings-badge.medium {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.savings-badge.low {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 14px;
+  color: #6B7280;
+}

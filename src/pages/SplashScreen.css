@@ -1,0 +1,46 @@
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #032221;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.splash-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-word {
+  display: flex;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-letter {
+  font-size: 88px;
+  font-weight: 700;
+  color: #F1F7F6;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.bouncing-dot {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  background-color: #00DF81;
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
